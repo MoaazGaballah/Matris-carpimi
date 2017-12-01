@@ -1,0 +1,22 @@
+22:35:22 **** Incremental Build of configuration Debug for project BP3_Proje1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\BP3_Proje1.o" "..\\src\\BP3_Proje1.c" 
+..\src\BP3_Proje1.c: In function 'random':
+..\src\BP3_Proje1.c:24:2: warning: implicit declaration of function 'gettimeofday' [-Wimplicit-function-declaration]
+  gettimeofday(&t1,NULL);
+  ^~~~~~~~~~~~
+..\src\BP3_Proje1.c:20:9: warning: unused variable 't' [-Wunused-variable]
+  time_t t;
+         ^
+..\src\BP3_Proje1.c:18:18: warning: unused variable 'ts' [-Wunused-variable]
+  struct timespec ts;
+                  ^~
+In file included from ..\src\BP3_Proje1.c:14:0:
+At top level:
+..\src\myHeader.h:26:17: warning: 'ns' defined but not used [-Wunused-function]
+ static uint64_t ns() {
+                 ^~
+gcc -o BP3_Proje1.exe "src\\BP3_Proje1.o" 
+
+22:35:28 Build Finished (took 5s.418ms)
+
