@@ -1,0 +1,20 @@
+istenilen :-
+5000 X 5000 ‘lik A ve B matrisleri çarpılarak yeni 5000 x 5000 lik bir C matrisi oluşturulacaktır. Ve çarpılırken indisleri her türlü değiştirerek süresi oluşturup bir biriyle kıyaslanması yapılacaktır. En kısa süre belirletip açıklanması yapılacaktır.
+
+Çalışma prensibi :-
+İlk adımda malloc() kullanarak 2 boyutlu A,B ve C diye 3 dizi oluşturdum. Oluşturduğum 3 diziye random() ile rastgele double sayılar üretip A ve B matrisleri çarparak C dizisi kurdum. Çarpım metot süresi clock metodu çağırarak çarpma işlemi hesapladım. Hesapladığım süreleri çarpım metodu indisleri değiştirerek bir biriyle kıyasladım. Kıyasları da ölçüm kıyaslamaları kısmında açıklanmıştır.
+
+Ölçüm kıyaslamaları :-                                                     
+İndis	Süre
+İ j k 	7686 saniye
+İ k j 	3530 saniye
+J i k 	7837 saniye
+J k i 	1797 saniye
+K i j 	5786 saniye 
+K j i 	1856 saniye 
+
+İlk olarak en dıştaki döngü eğer C matrisin indislerinden bir tanesi değil ise (j k i sırasında ) çok fazla sürmediğini görüyoruz. Çünkü çarpım adımlarında önce tüm elemanların çarpma işlemi yapıyor sonra toplam işlemi yapıyor. Fakat En fazla sürdüğü sıra ( j i k ) C matriste her elemanı için çarpma hemen ardında toplama işlemi yapıp ancak böyle bir sonraki elemana geçebiliyor.
+Sonuç ve çıkarımlar :-
+** Aynı cinsinden olan işlemleri art arda yapmak işlemciye göre daha kolay ve daha hızlıdır.
+** Değişik işlemleri çeşitli sıralarda yapmayı işlemciye göre daha yavaş ve maliyetlidir. 
+
